@@ -1,0 +1,807 @@
+body{
+    font-family:'Poppins',sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* This is the magic rule that stops horizontal scrolling */
+}
+
+* {
+    box-sizing: border-box; 
+    /* This ensures padding is calculated INSIDE the width, not added to it */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, links center, button right */
+    align-items: center;            /* Centers everything vertically */
+    padding: 15px 5%;               /* Breathing room on sides */
+    background: #ffffff;            /* Clean white background */
+    border-bottom: 1px solid #eaeaea; /* Subtle bottom border like the image */
+    box-shadow: none;               /* Removed heavy shadow for a cleaner look */
+}
+
+/* Logo Styling */
+.logo {
+    color: #002d5b; /* Dark blue/black for a clean, professional look */
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.logo:hover{
+
+}
+
+/* Forces the UL list items into a horizontal line */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px; /* Perfect spacing between links */
+    margin: 0;
+    padding: 0;
+}
+
+/* Link Styling */
+.nav-links li a {
+    text-decoration: none;
+    color: #444444; /* Dark grey text */
+    font-size: 15px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--green);
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px rgba(46, 139, 87, 0.3);
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+/* Reset the hero button container so it doesn't break the line */
+.hero-btn {
+    margin-top: 0; 
+    display: flex;
+    align-items: center;
+}
+
+/* Style your 'Get Started' button to fit the clean navbar */
+.hero-btn .btn {
+    margin-bottom: 0;
+    padding: 10px 24px;
+    background: transparent;
+    color: var(--green);
+    border: 2px solid var(--green);
+    border-radius: 4px; /* Slightly squared edges for a modern look */
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.hero-btn .btn:hover {
+    background: var(--green);
+    color: rgb(95, 187, 95);
+    transform: none; /* Removed the jumping effect so it stays inside the navbar */
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+/* ==========================================
+   PAGE BACKGROUND
+   ========================================== */
+   body, .hero {
+    background-color: #f5f5f5; /* Light gray background to frame the white card */
+}
+
+/* ==========================================
+   HERO BANNER (Image with bottom-aligned text)
+   ========================================== */
+   .hero-banner {
+    /* Linear gradient creates the dark overlay so the white text pops */
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), 
+                url('https://hips.hearstapps.com/hmg-prod/images/emily-post-garden-66d352b2e4bf5.jpg?crop=0.651xw:0.921xh;0.191xw,0.0385xh&resize=1120:*');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /* Makes the banner take up a good portion of the screen */
+    height: 90vh; 
+    min-height: 450px;
+    width: 100%;
+    
+    /* Flexbox aligns the text and button to the bottom center */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Pushes everything to the bottom */
+    align-items: center;       /* Centers everything horizontally */
+    
+    padding-bottom: 50px; /* Space between the button and the bottom edge */
+    text-align: center;
+}
+
+/* ==========================================
+   BANNER TYPOGRAPHY
+   ========================================== */
+.hero-banner h2 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Adds depth to the text */
+}
+
+/* ==========================================
+   SHOP NOW BUTTON
+   ========================================== */
+.hero-banner .shop-btn {
+    background-color: #16a34a; /* Vibrant green matching the image */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px; /* Pill-shaped edges */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Subtle drop shadow */
+}
+
+.hero-banner .shop-btn:hover {
+    background-color: #15803d; /* Slightly darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+.hero-content {
+    background: #ffffff;
+    max-width: 750px;  /* Keeps the card at a nice, readable width */
+    margin: 50px auto; /* Centers the card horizontally and adds breathing room */
+    padding: 50px;     /* The white space inside the card around the text */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Injecting the image via CSS since it isn't in your original HTML */
+
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+/* Styling your original <h1> to look like the blog title */
+.hero-content h1 {
+    color: #4a5a6a; /* The slate/blue-gray color from the image */
+    font-size: 26px;
+    font-weight: 400; /* Clean, un-bolded text */
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+/* Styling your original <p> to look like the blog excerpt */
+.hero-content p {
+    color: #666666; /* Standard dark gray */
+    font-size: 15px;
+    line-height: 1.7; /* Easy to read spacing */
+}
+
+.hero-content .btn {
+    align-self: flex-start; /* Keeps the button aligned to the left */
+    color: #65a30d; /* Seed Vine green */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+    color: #4a5a6a;
+}
+
+/* ==========================================
+   SERVICES GRID SECTION
+   ========================================== */
+   .services-grid-section {
+    padding: 60px 5%;
+    background-color: #ffffff; /* Clean white background */
+}
+
+/* Creates a 3-column layout that spaces itself perfectly */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   INDIVIDUAL SERVICE CARDS
+   ========================================== */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Slight lift effect when you hover over a service */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 4px;
+}
+
+/* Forces the image to be a perfect square like the screenshot */
+.service-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/* ==========================================
+   CARD TYPOGRAPHY & DETAILS
+   ========================================== */
+.service-info {
+    padding: 0 4px;
+}
+
+.service-title {
+    font-size: 15px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    
+    /* Truncates text to two lines if it gets too long */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.service-rating {
+    font-size: 13px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.stars {
+    color: #111; /* Black stars matching the image */
+    letter-spacing: 1px;
+}
+
+.reviews {
+    color: #777; /* Grey text for review count */
+}
+
+.service-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.service-meta {
+    font-size: 13px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ==========================================
+   GROWERS NOTES CTA BANNER
+   ========================================== */
+   .growers-cta-section {
+    /* Dark gradient overlay + leafy background image */
+    background: linear-gradient(rgba(15, 30, 15, 0.85), rgba(15, 30, 15, 0.85)), 
+                url('https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    width: 100%;
+    padding: 35px 5%; /* Top and bottom padding */
+}
+
+/* Container to group the items in the center */
+.growers-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Space between the image, text, and button */
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Keeps it looking nice if the screen gets small */
+}
+
+/* Small square thumbnail */
+.growers-img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+/* Text Container */
+.growers-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Space between title and paragraph */
+}
+
+.growers-text h3 {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.growers-text p {
+    color: #c5d6c5; /* A very light green/grey so it isn't stark white */
+    font-size: 14px;
+}
+
+/* Bright Green Call to Action Button */
+.growers-btn {
+    background-color: #8cc63f; /* Bright lime green matching the image */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.growers-btn:hover {
+    background-color: #7ab32e; /* Slightly darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* ==========================================
+   TESTIMONIALS SECTION
+   ========================================== */
+   .testimonials-section {
+    background-color: #f8f9fa; /* Very light off-white background */
+    padding-top: 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+    margin-bottom: 60px; /* Space before the shop now strip */
+}
+
+/* Creating the two columns */
+.test-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Makes both columns take up exactly half the width */
+}
+
+/* Pushes the title down a bit so the layout feels staggered */
+.test-title {
+    color: #4a5a6a;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   TESTIMONIAL CARDS
+   ========================================== */
+.test-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 30px; /* Space between the stacked cards */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04); /* Large, ultra-soft shadow */
+    position: relative; /* Needed to place the quote icon */
+}
+
+.test-name {
+    color: #4a5a6a;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+/* The thin line under the name */
+.test-divider {
+    border: none;
+    height: 1px;
+    background-color: #4a5a6a;
+    margin-bottom: 15px;
+}
+
+.test-text {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Positions the quote icon in the bottom right corner */
+.quote-icon {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    opacity: 0.8;
+}
+
+/* ==========================================
+   SHOP NOW FOOTER STRIP
+   ========================================== */
+.test-footer {
+    background-color: #ffffff;
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #f0f0f0; /* Slight separation from the background */
+}
+
+.shop-now-btn {
+    background-color: #8cc63f; /* Bright green matching your previous sections */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 12px 35px;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+/* ==========================================
+   CONTACT PAGE SECTION
+   ========================================== */
+   .contact-page-section {
+    padding: 80px 5%;
+    background-color: #f8f9fa; /* Matches the soft off-white background used earlier */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-header {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+.contact-header h2 {
+    font-size: 32px;
+    color: #4a5a6a;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.contact-header p {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Container for Form and Info */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1000px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft shadow to lift it off the page */
+    overflow: hidden;
+}
+
+/* ==========================================
+   LEFT COLUMN: FORM
+   ========================================== */
+.contact-form-wrapper {
+    flex: 1.5;
+    padding: 50px;
+}
+
+.contact-form-wrapper h3 {
+    font-size: 24px;
+    color: #4a5a6a;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #444444;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Styling the inputs, select, and textarea */
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    padding: 12px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+/* Focus state: changes border to your brand green */
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: #65a30d;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(101, 163, 13, 0.1);
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    background-color: #65a30d;
+    color: #ffffff;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #4d7c0f; /* Darker green on hover */
+}
+
+/* ==========================================
+   RIGHT COLUMN: CONTACT INFO
+   ========================================== */
+.contact-info-wrapper {
+    flex: 1;
+    background-color: #eef5df; /* Subtle green background matching previous sections */
+    padding: 50px;
+    border-left: 1px solid #e2ebd0;
+}
+
+.contact-info-wrapper h3 {
+    font-size: 24px;
+    color: #276F27;
+    margin-bottom: 15px;
+}
+
+.info-intro {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item .icon {
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 15px;
+    color: #276F27;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    font-size: 14px;
+    color: #555555;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+   ========================================== */
+@media (max-width: 850px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-form-wrapper, 
+    .contact-info-wrapper {
+        padding: 30px;
+    }
+}
+
+.shop-now-btn:hover {
+    background-color: #7ab32e;
+}
+
+/* Responsiveness: Stack columns on smaller screens */
+@media (max-width: 768px) {
+    .testimonials-container {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================
+   MAIN FOOTER SECTION
+   ========================================== */
+   .site-footer {
+    background-color: #f4f5f6;
+    padding-top: 70px;
+    border-top: 1px solid #eaeaea;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    padding-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   LEFT COLUMN (About Text)
+   ========================================== */
+.footer-col.about-col {
+    flex: 1;
+    text-align: center;
+    max-width: 320px;
+}
+
+.footer-col.about-col h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #4a5a6a;
+}
+
+.footer-col.about-col p {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   CENTER COLUMN (Logo)
+   ========================================== */
+.footer-col.logo-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo-circle {
+    width: 85px;
+    height: 85px;
+    background-color: #eef5df;
+    border: 2px solid #65a30d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.footer-col.logo-col h2 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #4a5a6a;
+}
+
+/* ==========================================
+   RIGHT COLUMN (Lists Wrapper)
+   ========================================== */
+.footer-links-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.footer-col.links-col h3 {
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #4a5a6a;
+}
+
+.footer-col.links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col.links-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col.links-col ul li a {
+    text-decoration: none;
+    color: #666666;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-col.links-col ul li a:hover {
+    color: #65a30d;
+}
+
+/* ==========================================
+   BOTTOM COPYRIGHT STRIP
+   ========================================== */
+.footer-bottom {
+    background-color: #f4f5f6; 
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.footer-bottom p {
+    color: #666666;
+    font-size: 13px;
+}
+
+/* ==========================================
+RESPONSIVE DESIGN (Mobile & Tablets)
+   ========================================== */
+@media (max-width: 850px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-direction: column; /* Stacks the logo, links, and button vertically */
+        gap: 20px; /* Adds breathing room between the stacked rows */
+        padding: 20px 5%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Allows links to wrap to a second line if needed on tiny screens */
+        justify-content: center;
+        gap: 15px;
+    }
+}
